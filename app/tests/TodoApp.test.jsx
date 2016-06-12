@@ -14,7 +14,7 @@ describe('TodoApp', ()=> {
 
   describe('handleAddTodo', ()=>{
     it('adds todo to list', ()=>{
-      
+
     });
   });
 });
