@@ -28,7 +28,8 @@ module.exports = {
     root: __dirname,
     modulesDirectories: [
       'node_modules',
-      './app/components'
+      './app/components',
+      './app/api'
     ],
     alias: {
       // Component alias automatically added
