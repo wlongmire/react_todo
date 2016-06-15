@@ -44,4 +44,25 @@ describe('TodoApp', ()=> {
     expect(todoApp.state.todos[0].completedAt).toBeA('number');
 
   });
+
+  if('should toggle completedAt value to undefined when handleToggle called', ()=> {
+    const todoData = {
+      id:11,
+      text: "test todo",
+      completed: false,
+      createdAt: moment().unix(),
+      completedAt: undefined
+    };
+
+    var todoApp = TextUtils.renderIntoDocument(<TodoApp />);
+    todoApp.setState({
+        todos: [todoData]
+    });
+
+    expect(todoApp.state.todos[0].completed).toBe(true);
+    todoApp.handleToggle(11);
+    expect(todoApp.state.todos[0].completed).toBe(false);
+    expect(todoApp.state.todos[0].completedAt).toNotExist();
+
+  });
 });
